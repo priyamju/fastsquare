@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+.container {
+
+background: black ;
+
+display: inline-block ;
+
+border: 1px solid rgb(183,53,64) ;
+
+margin-left: 40% ;
+
+}
+
+.grid {
+
+display: grid ;
+
+grid-template-columns: repeat(5,100px);
+grid-template-rows: repeat(5,100px);
+grid-gap: 10px;
+
+
+}
+
+.cell {
+
+background: blue;
+
+font-size:60px;
+
+text-align: inherit;
+
+}
+
+
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container" id="mycontainer" >
+
+<div class="grid" id="mygrid" >
+
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+var count  =  0 ;
+    var x = "";
+    var visited=[];
+    
+    var ans=1 ;
+
+    function findnum( max,min ){
+    
+    ans = Math.floor( ( Math.random() * (max-min) + min ) );
+
+    while(1) {
+    var  k = 0 ;
+    for(var c = 0 ; c<visited.length ; c++)
+   if(visited[c]==ans){ans=Math.floor( ( Math.random() * (max-min) + min ) ); k = 1 ; break ;}
+
+   if(k==0)
+    break ;
+    }
+    
+    visited.push(ans) ;
+    
+    
+    } 
+    
+    
+    for(var j=0;j<25;j++){
+    
+    findnum(26,1) ;
+    var z = ans.toString() ;
+    
+    x=x+'<div class = "cell" onclick="clickf(this) " > '+z+ '</div> ' ;
+    
+    
+    
+    }
+    
+    
+    document.getElementById("mygrid").innerHTML=x ;
+
+   
+   var timei ;
+   
+
+    function clickf(elem){
+
+     if(count==0){
+        var d= new Date() ; 
+        timei=d.getTime() ;
+     }
+
+    var m = parseInt(elem.innerHTML) ;
+    
+        if( m == (count+1) ){
+
+       if(m<=25){
+     
+        findnum(51,26) ;
+        
+        elem.innerHTML = ans.toString() ;
+      
+
+       }
+
+
+       else {
+
+        elem.innerHTML="";
+        
+        elem.style.background = "white" ;
+
+       }
+
+
+       count+=1 ;
+
+     
+       if(count == 50 ){
+        var d2= new Date() ;
+      var timenow = d2.getTime() ;
+
+      var totaltime = (timenow-timei)/1000;
+
+      var s="" ;
+
+      if(totaltime >= 90){
+
+      s = "YOU TOOK " + totaltime.toString() + "SECONDS || YOU ARE SLOW DUDE,PRACTICE SOME PUZZLES" ;
+
+
+
+      }
+     
+
+      if(totaltime >70 && totaltime < 90{
+        s = "YOU TOOK " + totaltime.toString() + "SECONDS || YOU ARE GREAT DUDE,WOOOHOOO" ;
+
+      }
+
+      else {
+
+        s = "YOU TOOK " + totaltime.toString() + "SECONDS || YOU ARE GWADD,NEED YOUR AASHIRVAAD" ;
+
+      }
+
+
+ 
+      alert(s) ;
+
+
+
+       }
+
+
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+    
+    
+    </script>
+
+
+
+
+</body>
+
+
+</html>
