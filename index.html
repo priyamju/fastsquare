@@ -4,15 +4,26 @@
 
 <style>
 
+body {
+
+background-image: url('https://www.itl.cat/pngfile/big/157-1572191_hd-wallpapers-for-website-background-cool-background-image.jpg');
+
+background-size: 100%;
+
+}
+
 .container {
 
 background: black ;
 
 display: inline-block ;
 
-border: 1px solid rgb(183,53,64) ;
+border: 1px solid  rgb(4, 194, 184);
 
-margin-left: 40% ;
+box-shadow:2px 2px 10px 5px rgb(4, 155, 147);
+
+margin-top: 2% ;
+margin-left: 30% ;
 
 }
 
@@ -22,18 +33,36 @@ display: grid ;
 
 grid-template-columns: repeat(5,100px);
 grid-template-rows: repeat(5,100px);
-grid-gap: 10px;
+grid-gap: 2px;
 
 
 }
 
 .cell {
 
-background: blue;
+background: rgb(6, 245, 233);
 
 font-size:60px;
 
-text-align: inherit;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+
+text-align: center;
+
+}
+
+.myh1 {
+
+margin-left: 45% ;
+
+font-size: xx-large;
+
+text-shadow: 4px 4px rgb(4, 89, 122);
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+font-style:initial;
+
+
 
 }
 
@@ -48,6 +77,9 @@ text-align: inherit;
 </head>
 
 <body>
+ 
+
+<h1 class="myh1">FAST SQUARE</h1>  
 
 
 <div class="container" id="mycontainer" >
@@ -60,10 +92,23 @@ text-align: inherit;
 
 
 </div>
+ <br></br><br></br>
+
+<div  style="color:rgb(238, 57, 57);font-size:x-large; font-family: cursive;"  >CLICK FROM 1 TO 50 AS FAST AS YOU CAN</div>
+<br/>
+<div  style="color:rgb(238, 57, 57);font-size:x-large; font-family: cursive;"  >THIS A.I BASED SQUARE,WILL JUDGE YOUR MENTAL STATUS A/Q TIME TAKEN BY YOU</div>
+
+
+
+
+
+
+
 
 
 
 <script>
+  
 
 var count  =  0 ;
     var x = "";
@@ -95,7 +140,7 @@ var count  =  0 ;
     findnum(26,1) ;
     var z = ans.toString() ;
     
-    x=x+'<div class = "cell" onclick="clickf(this)" ontouchstart="clickf(this)"  > '+z+ '</div> ' ;
+    x=x+'<div class = "cell" onclick="clickf(this)" ontouchstart="clickf(this)"  style="color:black;"  > '+z+ '</div> ' ;
     
     
     
@@ -158,12 +203,12 @@ var count  =  0 ;
       }
      
 
-      if(totaltime >70 && totaltime < 90){
+      else if(totaltime >70 && totaltime < 90){
         s = "YOU TOOK " + totaltime.toString() + "SECONDS || YOU ARE GREAT DUDE,WOOOHOOO" ;
 
       }
 
-      else {
+      else if( totaltime<=70 ) {
 
         s = "YOU TOOK " + totaltime.toString() + "SECONDS || YOU ARE GWADD,NEED YOUR AASHIRVAAD" ;
 
@@ -200,6 +245,12 @@ var count  =  0 ;
     
     
     </script>
+
+
+
+
+
+
 
 
 
